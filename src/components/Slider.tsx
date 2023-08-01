@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const data = [
@@ -29,16 +30,16 @@ const Slider = () => {
         return () => clearInterval(interval)
     },[])
     return (
-        <div className='flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)]  lg:flex-row bg-fuchsia-50 '>
+        <div className='flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)]  lg:flex-row bg-fuchsia-50  '>
             {/* TEXT CONTAINER */}
             <div className='h-1/2 flex items-center justify-center flex-col gap-8 text-red-500 font-bold lg:h-full lg-w-1/2'>
-                <h1 className='text-5xl text-center uppercase py-4 md:text-6xl xl:text-7xl'>
+                <h1 className='text-3xl text-center uppercase py-4 md:text-6xl xl:text-7xl '>
                     {data[currentSlide].title}
                 </h1>
-                <button className='bg-red-500 text-white py-4 px-8'>Order Now</button>
+                <Link href='/menu/category' className='bg-red-500 text-white py-4 px-8'>Order Now</Link>
             </div>
             {/* IMAGE CONTAINER */}
-            <div className='w-full h-1/2 relative lg:h-full lg:w-1/2'>
+            <div className='w-full h-1/2 relative lg:h-full lg:w-1/2 '>
                 <Image src={data[currentSlide].image} alt='' fill  className='object-fit ' />
             </div>
         </div>
